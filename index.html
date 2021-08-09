@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Live Coding Bootstrap</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>Aligner horizontalement des div dans le container</h2><br>
+        Tout d'abord créer le container<br>
+        Ensuite ajouter une row. Par défaut row utilisera du display flex par conséquent cherchera à aligner les div
+        enfants les unes à coté des autres<br>
+        Ajouter justify-content-center afin que celles-ci soient centrées dans la row.<br>
+        Attention toute fois il faut que les div enfant aient une taille, soit en spécifiant un col-* ou alors en
+        spéciant une taille en px ou %<br><br>
+
+        <code>
+            <pre>
+        &lt;div class="container">
+            &lt;div class="row <b style="color:red">justify-content-center</b> bg-dark" >
+            &lt;div class="col-3 bg-warning">test&gt;/div>
+            &lt;div class="col-3 bg-warning">test&gt;/div>
+            &lt;div class="col-3 bg-warning">test&gt;/div>
+             &gt;/div>
+        &gt;/div>
+    </pre>
+        </code><br>
+    </div>
+
+    <div class="container">
+        <h3>Résultat</h3><br>
+        <div class="row justify-content-center bg-dark">
+            <div class="col-3 bg-warning">test</div>
+            <div class="col-3 bg-warning">test</div>
+            <div class="col-3 bg-warning">test</div>
+        </div>
+    </div>
+
+
+    <div class="container mt-5">
+        <h2>Aligner verticalement des div dans le container</h2><br>
+        Pour aligner verticalement une div dans notre row il va falloir un élément important pour que cela fonctionne.
+        <br />
+        En effet vous allez devoir définir la hauter de votre row pour que vos div puissent se placer au milieu de votre
+        parent.<br />
+        Sur votre row n'oubliez pas d'ajouter la class align-items-center
+        <br>
+        <br>
+        <code>
+            <pre>
+            &lt;div class="container">
+                &lt;div class="row  <b style="color:red">align-items-center</b> bg-dark" style="<b style="color:red">height:250px</b>">
+                     &lt;div class="col-3 bg-warning">test&gt;/div>
+                     &lt;div class="col-3 bg-warning">test&gt;/div>
+                     &lt;div class="col-3 bg-warning">test&gt;/div>
+                 &gt;/div>
+            &gt;/div>
+        </pre>
+        </code><br>
+    </div>
+
+    <div class="container">
+        <h3>Résultat</h3><br>
+        <div class="row justify-content-center bg-dark align-items-center" style="height: 250px;">
+            <div class="col-3 bg-warning">test</div>
+            <div class="col-3 bg-warning">test</div>
+            <div class="col-3 bg-warning">test</div>
+        </div>
+    </div>
+
+    <div class="container mt-5">
+        <h2>Le display flex</h2><br>
+        la class row a pour propriété css flex.<br>
+        Ce qui implique que les enfants directs de row vont etre soumis à ce flex<br/>
+        Toutfois si vous avez une div dans une div (une div petit enfant) alors celle ci n'y sera pas soumis<br/>
+        C'est pourquoi il vous faudra spécifier d-flex en guise de class dans le parent
+        <br>
+        <br>
+        <code>
+            <pre>
+            &lt;div class="container">
+                &lt;div class="row justify-content-center bg-dark">
+                     &lt;div class="col-3 bg-warning <b style="color:red">d-flex</b>">
+                         &lt;div>sous test&gt;/div>
+                         &lt;div>sous test&gt;/div>
+                     &gt;/div>
+                     &lt;div class="col-3 bg-warning">test&gt;/div>
+                     &lt;div class="col-3 bg-warning">test&gt;/div>
+                 &gt;/div>
+            &gt;/div>
+        </pre>
+        </code><br>
+    </div>
+
+    <div class="container">
+        <h3>Résultat</h3><br>
+        <div class="row justify-content-center bg-dark">
+            <div class="col-3 bg-warning d-flex">
+                <div class="bg-danger">sous test</div>
+                <div class="bg-info">sous test</div>
+            </div>
+            <div class="col-3 bg-warning">test</div>
+            <div class="col-3 bg-warning">test</div>
+        </div>
+    </div>
+
+
+
+    </div>
+</body>
+
+</html>
